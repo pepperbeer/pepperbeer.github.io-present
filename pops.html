@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #DE7C7D;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            padding: 40px;
+            border: none;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width: 35rem;
+            height: auto;
+            background-color: #740938;
+            border-radius: 13px;
+        }
+        .card h1 {
+            font-size: 28px;
+            color: #eedede;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+        }
+
+        .btn-custom {
+            padding: 10px 20px;
+            font-weight: bold;
+            border: 2px solid white;
+            border-radius: 8px;
+            width: 200px; /* Fix button width */
+            margin: 10px; /* Add margin between buttons */
+            transition: .3s;
+        }
+
+        /* Hover effect for both buttons */
+        .btn-custom:hover {
+            transform: scale(1.2); /* Keep the scale effect on hover */
+        }
+
+        #mau {
+            background-color: #AF1740;
+            color: #ffd6d6;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect for the first button */
+        #mau:hover {
+            background-color: #CC2B52; /* Change color on hover */
+            color: rgb(237, 216, 216);
+        }
+        
+        #tidak {
+            background-color: #AF1740;
+            color: #ffd6d6;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Hover effect for the second button */
+        #tidak:hover {
+            background-color: #CC2B52; /* Change color on hover */
+            color: white;
+        }
+
+        /* Adding hover effect for the new buttons */
+        .new-btn:hover {
+            background-color: #d04343 !important;
+            color: white !important;
+            border: 2px solid #ffffff !important;
+        }
+
+        .new-btn {
+            border: 2px solid white;
+            border-radius: 8px;
+            width: 200px;
+            margin: 10px;
+        }
+    </style>
+
+    <title> its another month </title>
+  </head>
+  <body>
+    
+    <div class="container"> 
+        <div class="card">
+            <h1 id="messageBox"> masuk ke bulan selanjutnya nih, ju. udah capek belum sama acen? </h1>
+            <div class="button" id="buttonContainer">
+                <button type="button" class="btn btn-custom" id="mau" onclick="mau()">belum lah, masih banyak stock sayang dan sabar nih.</button>
+                <button type="button" class="btn btn-custom" id="tidak" onclick="tidak()">udah.</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script> 
+        let pindah = 1;
+        
+                // When "mau" is clicked, change the text and buttons
+                function mau() {
+            // Change the text in the box
+            document.getElementById('messageBox').textContent = "makasih banyak buat sayangin acen, ju. ini ada dua hadiah buat juwi hehe.";
+
+            // Replace the current buttons with two new options
+            document.getElementById('buttonContainer').innerHTML = `
+                <button type="button" class="btn btn-custom new-btn" style="background-color: #AF1740; color: #ffd6d6;" onclick="option1()">a bunch of flowers!!</button>
+                <button type="button" class="btn btn-custom new-btn" style="background-color: #AF1740; color: #ffd6d6;" onclick="option2()">another love letter hehe</button>
+            `;
+        }
+
+        
+
+        function option1() {
+            // Redirect to a new link when "a bunch of flowers!!" is clicked
+            window.location.href = "https://pepperbeer.github.io/pepperbeer.github.io-specials/";
+        }
+
+        function option2() {
+            // Redirect to a different link when "another love letter hehe" is clicked
+            window.location.href = "https://medium.com/@pepperbeer/another-month-with-you-373a1c750ed2";
+        }
+        
+        function tidak() {
+            const button = document.getElementById("tidak");
+
+            if (pindah === 1) {
+                button.style.top = '200px';
+                button.style.left = '80px';
+                pindah = 2;
+            } 
+            else if (pindah === 2) {
+                button.style.top = '200px';
+                button.style.left = '60px';
+                pindah = 3;
+            } 
+            else if (pindah === 3) {
+                button.style.top = '156px';
+                button.style.left = '20px';
+                pindah = 1;
+            }
+        }
+    </script>
+
+  </body>
+</html>
